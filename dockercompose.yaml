@@ -1,0 +1,15 @@
+version: "3"
+services:
+  motorway:
+    container_name: motorway
+    build: .
+    ports:
+      - "80:80"
+    expose:
+      - "80"
+    networks:
+      - internalnet
+
+networks:
+  internalnet:
+    external: false
