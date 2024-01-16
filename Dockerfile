@@ -17,7 +17,7 @@ FROM nginx:stable
 
 COPY default.conf /etc/nginx/conf.d/default.conf
 
-COPY --from=build /app/dist/index.html /usr/share/nginx/html/index.html
+COPY --from=build /app/dist/motorway/browser/index.html /usr/share/nginx/html/index.html
 
 COPY --from=build /app/dist/motorway/browser /usr/share/nginx/html
 
