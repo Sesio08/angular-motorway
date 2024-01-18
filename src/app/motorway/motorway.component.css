@@ -1,0 +1,97 @@
+html { 
+    font-size: 15pt;
+}
+body {
+    display: flex;
+    background-color: #161617;
+    flex-direction: column;
+}
+h1 {
+    font-size: 18pt;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+h2 {
+    font-size: 16pt;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.sidebar {
+    width: 15%;
+    background-color: #212529;
+    color: #f2f2f6;
+    position: fixed;
+    height: 100%;
+    padding-bottom: 5%;
+    overflow-y: auto;
+}
+.selectionableRoad{
+    cursor: pointer;
+    border-bottom: 1px solid #555;
+}
+.selectionableRoad:hover {
+    color: #ffcc00; 
+    font-style: italic;
+}
+.selectionableRoad:active {
+    font-weight: bold;
+    font-style: normal;
+    color: #FF4A32;
+}
+.content {
+    width: 85%;
+    height: 100%;
+    position: fixed;
+    flex: 1;
+    margin-left: 15%;
+    padding: 15px;
+    background-color: #212529;
+    color:#f2f2f6;
+    overflow-y: auto;
+}
+.data {
+    margin-top: -1.55%;
+}
+.firstRow {
+    position: fixed;
+    overflow-y: auto;
+    width: 81.55%;
+    background-color: #212529;
+    z-index: 1;
+    border: 1px solid #555;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.dataRow {
+    position: relative;
+    width: 100%;
+    padding-top: 5%;
+    border: 1px solid #555;
+    cursor: pointer;
+}
+.dataRow:hover {
+    color:#ffcc00;
+    font-style: italic;
+}
+.dataRow:active {
+    font-weight: bold;
+    font-style: normal;
+    color: #FF4A32;
+}
+img {
+    width: 100%;
+    position: relative;
+    align-items: center;
+}
+.submenu {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 10;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}

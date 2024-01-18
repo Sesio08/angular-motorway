@@ -1,1 +1,59 @@
-<h1>App motorway</h1>
+<div class="sidebar">
+    <span>
+        <h1 class="mt-2">Avaliable roads</h1>
+    </span>
+    <div class="col align-items-start m-3">
+        <div class="selectionableRoad row" (click)="clickRoad(road, $event)" *ngFor="let road of roadIdList">
+            <span>{{ road }}</span>
+        </div>
+    </div>
+</div>
+<div class="submenu" (click)="clickRoad('', $event)" *ngIf="submenuIsVisible" [style.top.px]="submenuTop" [style.left.px]="submenuLeft">
+    <div>
+        <h1>This is a submenu</h1>
+    </div>
+</div>
+<div class="content" (click)="clickRoad('', $event)">
+    <div class="home" *ngIf="roadList.length === 0">
+        <div>
+            <h1>hola</h1>
+        </div>
+        <div>
+            <p>buenas tardes</p>
+        </div>
+    </div>
+    <div class="data" *ngIf="roadList.length !== 0 && !detail">
+        <div class="firstRow row">
+            <div class="col-3">Title</div>
+            <div class="col-2">Subtitle</div>
+            <div class="col">Blocked</div>
+            <div class="col">Icon</div>
+            <div class="col">Display Type</div>
+            <div class="col">Lat</div>
+            <div class="col">Long</div>
+        </div>
+        <div class="dataRow row" *ngFor="let roadWork of roadList" (click)="clickDetail(roadWork)">
+            <div class="col-3">{{ roadWork.title }}</div>
+            <div class="col-2">{{ roadWork.subtitle }}</div>
+            <div class="col">
+                <i *ngIf="roadWork.isBlocked" class="fa-solid fa-unlock" style="color:rgb(130, 217, 143)"></i>
+                <i *ngIf="!roadWork.isBlocked" class="fa-solid fa-lock" style="color: rgb(235, 92, 121);"></i>
+            </div>
+            <div class="col"><img src="../../assets/img/{{ roadWork.icon }}.png" alt=""></div>
+            <div class="col">{{ roadWork.display_type }}</div>
+            <div class="col">{{ roadWork.coordinate.lat }}</div>
+            <div class="col">{{ roadWork.coordinate.long }}</div>
+
+        </div>
+    </div>
+    <div class="detail" *ngIf="detail">
+        <div>
+            <h1>{{ roadWork.title }}</h1>
+            <h2>{{ roadWork.subtitle }}</h2>
+            <p>{{ roadWork.description }}</p>
+            <p>Extend: {{roadWork.extent }}</p>
+            <p>Identifier: {{roadWork.identifier }}</p>
+            <p>startTimestamp: {{roadWork.startTimestamp }}</p>
+        </div>
+    </div>
+</div>

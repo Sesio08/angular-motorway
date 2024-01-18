@@ -5,17 +5,17 @@ import { Observable } from "rxjs";
 @Injectable({
     providedIn: 'root'
 })
-export class PokemonService {
+export class RoadService {
 
     constructor(private http: HttpClient) {}
 
-    getRoadIds(parametros: any): Observable<any> {
+    getRoadIds(): Observable<any> {
         const url = "https://verkehr.autobahn.de/o/autobahn/";
         return this.http.get(url);
     }
 
-    getRoad(parametros: any): Observable<any> {
-        const url = "https://verkehr.autobahn.de/o/autobahn/" + parametros + "/services/roadworks";
+    getRoadWorks(param: any): Observable<any> {
+        const url = "https://verkehr.autobahn.de/o/autobahn/" + param + "/services/roadworks";
         return this.http.get(url);
     }
 }
