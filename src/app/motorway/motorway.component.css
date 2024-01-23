@@ -53,6 +53,7 @@ h2 {
 }
 .data {
     margin-top: -1.55%;
+    padding-bottom: 5%;
 }
 .firstRow {
     position: fixed;
@@ -90,8 +91,27 @@ img {
     position: absolute;
     top: 0;
     left: 100%;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #212529;
+    border: 1px solid #555;
+    color: #f2f2f6;
     z-index: 10;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border-bottom: 1px solid #555;
+}
+.submenu>div {
+    margin: 2px;
+    padding: 3px;
+}
+
+.submenu>div>p {
+    cursor: pointer;
+}
+.submenu>div>p:hover {    
+    color:#ffcc00;
+    font-style: italic;
+}
+.submenu>div>p:active {
+    font-style: normal;
+    color: #FF4A32;
 }
