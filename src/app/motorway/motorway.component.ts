@@ -23,6 +23,7 @@ export class MotorwayComponent {
   submenuLeft: number = 0;
   call: string = "";
   callDetail: string = "";
+  home: boolean = true;
 
   constructor(private roadService: RoadService) {
     this.roadWork = '';
@@ -79,27 +80,12 @@ export class MotorwayComponent {
     else if (this.submenuIsVisible) {
       this.submenuIsVisible = false;
     }
+    this.home = false;
     this.detail = false;
     this.call = "roadwork";
     this.callDetail = "roadwork";
   }
 
-  clickWebcam(): void {
-    this.roadService.getWebcams(this.roadWork).subscribe(data => {
-      ;
-      this.roadList = data.webcam;
-      console.log(this.roadList);
-    })
-    if (!this.submenuIsVisible) {
-      this.submenuIsVisible = true;
-    }
-    else if (this.submenuIsVisible) {
-      this.submenuIsVisible = false;
-    }
-    this.detail = false;
-    this.call = "webcam";
-    this.callDetail = "webcam";
-  }
 
   clickParking(): void {
     this.roadService.getParking(this.roadWork).subscribe(data => {
@@ -113,6 +99,7 @@ export class MotorwayComponent {
     else if (this.submenuIsVisible) {
       this.submenuIsVisible = false;
     }
+    this.home = false;
     this.detail = false;
     this.call = "parking lorry";
     this.callDetail = "parking_lorry";
@@ -130,6 +117,7 @@ export class MotorwayComponent {
     else if (this.submenuIsVisible) {
       this.submenuIsVisible = false;
     }
+    this.home = false;
     this.detail = false;
     this.call = "warning";
     this.callDetail = "warning";
@@ -147,6 +135,7 @@ export class MotorwayComponent {
     else if (this.submenuIsVisible) {
       this.submenuIsVisible = false;
     }
+    this.home = false;
     this.detail = false;
     this.call = "closure";
     this.callDetail = "warning";
@@ -164,6 +153,7 @@ export class MotorwayComponent {
     else if (this.submenuIsVisible) {
       this.submenuIsVisible = false;
     }
+    this.home = false;
     this.detail = false;
     this.call = "electric charging station";
     this.callDetail = "electric_charging_station";
@@ -231,5 +221,14 @@ export class MotorwayComponent {
     else {
       return text
     }
+  }
+
+  returnHome(): void {
+    this.roadList = []
+    this.detail = false 
+    this.submenuIsVisible = false
+    this.call = ''
+    this.callDetail = ''
+    this.home = true;
   }
 }

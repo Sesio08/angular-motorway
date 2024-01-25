@@ -18,6 +18,17 @@ h2 {
     justify-content: center;
     text-align: center;
 }
+img {
+    width: 100%;
+    position: relative;
+    align-items: center;
+}
+.navbar {
+    height: 10%;
+}
+.homeButton {
+    cursor: pointer;
+}
 .sidebar {
     width: 15%;
     background-color: #212529;
@@ -81,11 +92,6 @@ h2 {
     font-style: normal;
     color: #FF4A32;
 }
-img {
-    width: 100%;
-    position: relative;
-    align-items: center;
-}
 .submenu {
     display: block;
     position: absolute;
@@ -98,6 +104,34 @@ img {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     padding: 5px;
     border-bottom: 1px solid #555;
+}
+.welcome {
+    background-color: #FFF;
+    color: #161617;
+    margin: 2px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.explanation {
+    padding: 5px;
+}
+.homepageImg {
+    height: 50%;
+    width: 50%;
+}
+.driveImg {
+    
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+}
+.title {
+    background-color: #ffd865;
+    color: #161617;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 .submenu>div {
     margin: 2px;

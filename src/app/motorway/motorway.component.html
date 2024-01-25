@@ -1,3 +1,8 @@
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid homeButton" (click)="returnHome()">
+        <span class="navbar-brand mb-0 h1">Motorway App</span>
+    </div>
+</nav>
 <div class="sidebar">
     <span>
         <h1 class="mt-2">Avaliable roads</h1>
@@ -8,11 +13,10 @@
         </div>
     </div>
 </div>
-<div class="submenu animate__animated animate__fadeIn " (click)="clickRoad('', $event)" *ngIf="submenuIsVisible" [style.top.px]="submenuTop"
-    [style.left.px]="submenuLeft">
+<div class="submenu animate__animated animate__fadeIn " (click)="clickRoad('', $event)" *ngIf="submenuIsVisible"
+    [style.top.px]="submenuTop" [style.left.px]="submenuLeft">
     <div>
         <p (click)="clickRoadWork()">Roadwoks</p>
-        <p (click)="clickWebcam()">Webcam</p>
         <p (click)="clickParking()">Parking lorry</p>
         <p (click)="clickWarning()">Warning</p>
         <p (click)="clickClosure()">Closure</p>
@@ -21,16 +25,87 @@
     </div>
 </div>
 <div class="content" (click)="clickRoad('', $event)">
-    <div *ngIf="roadWork !== '' && roadList.length === 0">
-        <p>This road has no {{ call }} active right now! <i class="fa-solid fa-triangle-exclamation"></i></p>
+    <div class="home" *ngIf="roadList.length === 0 && home">
+        <div class="welcome">
+            <div class="title">
+                <h1>Welcome to Motorway!</h1>
+            </div>
+            <div class="explanation">
+                <div class="row">
+                    <div class="col-2" style="width: 75%;">
+                        <p>
+                            Motorway is an concise application that provides an overview of the roads in Germany. It
+                            allows
+                            you
+                            to explore the roadworks, webcams, parkins, warnings, closures and electric charging
+                            stations
+                            effortlessly.
+                        </p>
+                        <p>
+                            All you need to do is select a road and then the information you require. For
+                            instance, if you want to view all the parking areas on the A1 road, simply navigate to A1 >
+                            Parking
+                            lorry and the app will display all the avaliable parking spaces.
+                        </p>
+                        <p>
+                            If you need more details about an
+                            specific parking, click on it to view additional information
+                        </p>
+                    </div>
+                    <div class="col" style="width: 25%; height: 25%;">
+                        <img class="driveImg" src="../../assets/img/driving.gif" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            style="justify-content: center; text-align: center; margin-top: 5px; padding-left: 20px; padding-right: 20px;">
+            <div class="row">
+                <div class="col" style="display:flex; justify-content: center; align-items: center;">
+                    <h1>Find a route without difficulties</h1>
+                </div>
+                <img class="homepageImg col-2" style="width: 40%; height: 40%;" src="../../assets/img/car_crash.png"
+                    alt="">
+            </div>
+            <div style="justify-content: center; text-align: center; margin-top: 5px">
+                <div class="row">
+                    <img class="homepageImg col-2" style="width: 40%; height: 40%;" src="../../assets/img/parking.png"
+                        alt="">
+                    <div class="col" style="display:flex; justify-content: center; align-items: center;">
+                        <h1>Find a parking space before leaving home</h1>
+                    </div>
+                </div>
+            </div>
+            <div style="justify-content: center; text-align: center; margin-top: 5px">
+                <div class="row">
+                    <div class="col" style="display:flex; justify-content: center; align-items: center;">
+                        <h1>Be carefull with the warnings</h1>
+                    </div>
+                    <img class="homepageImg col-2" style="width: 40%; height: 40%;" src="../../assets/img/warning.png"
+                        alt="">
+                </div>
+            </div>
+            <div style="justify-content: center; text-align: center; margin-top: 5px">
+                <div class="row">
+                    <img class="homepageImg col-2" style="width: 40%; height: 40%;" src="../../assets/img/close.png"
+                        alt="">
+                    <div class="col" style="display:flex; justify-content: center; align-items: center;">
+                        <h1>Know the closed roads</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="display:flex; justify-content: center; align-items: center;">
+                    <h1>Charge your car</h1>
+                </div>
+                <img class="homepageImg col-2" style="width: 40%; height: 40%;" src="../../assets/img/Electric.png"
+                    alt="">
+            </div>
+        </div>
     </div>
-    <div class="home" *ngIf="roadWork === '' && roadList.length === 0">
-        <div>
-            <h1>hola</h1>
-        </div>
-        <div>
-            <p>buenas tardes</p>
-        </div>
+    <div *ngIf="roadWork !== '' && roadList.length === 0 && !home">
+        <p>This road has no {{ call }} active right now! <i class="fa-solid fa-triangle-exclamation"></i></p>
     </div>
     <div class="data" *ngIf="roadList.length !== 0 && !detail">
         <div class="firstRow row">
@@ -70,8 +145,7 @@
                     <i class="fa-solid {{ getIcon(parking.icon) }}"></i>
                     <p>{{ getIcon(parking.description) }}</p>
                 </div>
-                
+
             </div>
         </div>
     </div>
-</div>
