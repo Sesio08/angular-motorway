@@ -40,6 +40,7 @@ export class RoadService {
     }
     getDetail(param: any): Observable<any> {
         const url = "https://verkehr.autobahn.de/o/autobahn/details/" + param;
+        console.log(url);
         return this.http.get(url);
     }
 }

@@ -181,6 +181,7 @@ export class MotorwayComponent {
 
   getIcon(text: string): string {
     //picnic, restroom, Restaurant, gaspump, shopping, Kiosk, shower
+    console.log("ey")
     if(text.includes("picnic")){
       return "fa-person-hiking"
     }

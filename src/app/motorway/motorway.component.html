@@ -141,7 +141,7 @@
             <p>Extend: {{road.extent }}</p>
             <p>Identifier: {{road.identifier }}</p>
             <p>startTimestamp: {{road.startTimestamp }}</p>
-            <div *ngIf="road.lorryParkingFeatureIcons.lenght > 0">
+            <div *ngIf="road.lorryParkingFeatureIcons.length !== 0">
                 <h1>Features:</h1>
                 <div *ngFor="let parking of road.lorryParkingFeatureIcons">
                     <i class="fa-solid {{ getIcon(parking.icon) }}"></i>
